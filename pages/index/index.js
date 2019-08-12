@@ -6,29 +6,55 @@ Page({
    */
   data: {
     name: '',
-    avator: ''
+    avator: '',
+    canIUse: false
   },
 
   openHandle() {
-    console.log('开启小程序')
+    //跳转list页面
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.getUserInfo({
+    //查看是否授权
+    wx.getSetting({
       success: (res) => {
-        var userinfo = res.userInfo
-        this.setData({
-          name: userinfo.nickName,
-          avator: userinfo.avatarUrl
-        })
-      },
-      fail: (err) => {
-        console.log(err);
+        if (res.authSetting['scope.userInfo']) {
+          //已经授权，可以直接调用getUserInfo
+          wx.getUserInfo({
+            success: (res) => {
+              var userinfo = res.userInfo
+              this.setData({
+                name: userinfo.nickName,
+                avator: userinfo.avatarUrl,
+                canIUse: false
+              })
+            },
+            fail: (err) => {
+              console.log(err);
+            }
+          })
+        } else {
+          this.setData({
+            canIUse: true
+          })
+        }
       }
     })
+  },
+
+  bindGetUserInfo(e) {
+    if (e.detail.rawData) {
+      let userInfo = JSON.parse(e.detail.rawData)
+      //用户点击了允许
+      this.setData({
+        name: userInfo.nickName,
+        avator: userInfo.avatarUrl,
+        canIUse: false
+      })
+    }
   },
 
   /**
