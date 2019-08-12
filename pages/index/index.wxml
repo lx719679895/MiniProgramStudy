@@ -1,6 +1,6 @@
 <!--pages/index/index.wxml-->
 <view class="container">
-<image class="avatar" src="../../images/carousel/01.jpg"></image>
+<image class="avatar" src="{{avator}}"></image>
 <text class="username">hello {{name}}</text>
-<view class="open-mp">开启小程序之旅</view>
+<view class="open-mp" bindtap="openHandle">开启小程序之旅</view>
 </view>

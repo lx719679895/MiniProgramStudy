@@ -5,14 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: 'ShawLee'
+    name: '',
+    avator: ''
+  },
+
+  openHandle() {
+    console.log('开启小程序')
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.getUserInfo({
+      success: (res) => {
+        var userinfo = res.userInfo
+        this.setData({
+          name: userinfo.nickName,
+          avator: userinfo.avatarUrl
+        })
+      },
+      fail: (err) => {
+        console.log(err);
+      }
+    })
   },
 
   /**
