@@ -1,2 +1,14 @@
-<!--pages/list/list.wxml-->
-<text>pages/list/list.wxml</text>
+<!-- pages/list/list.wxml -->
+<import src="../../template/list-temp/list-temp.wxml" />
+<view>
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{4000}}" duration="{{500}}" indicator-color="#f6f6f6">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image class="swiper-image" mode="aspectFill" src="../../images/carousel/{{item}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view wx:for="{{listData}}" wx:key="index">
+    <template is="list-temp" data="{{...item}}"></template>
+  </view>
+</view>

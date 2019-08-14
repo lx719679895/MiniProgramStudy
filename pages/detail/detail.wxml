@@ -1,0 +1,15 @@
+<!--pages/detail/detail.wxml-->
+<view class="container">
+  <image class="cover" src="../../images/2.jpg"></image>
+  <view class="info">
+    <image mode="aspectFill" src="../../images/avatar/01.jpg"></image>
+    <text>美国队长 发布于 may 19 2018</text>
+  </view>
+  <text class="title">尚硅谷</text>
+  <view class="careDetail">
+    <icon class="iconfont icon-shoucang"></icon>
+    <icon class="iconfont icon-fenxiang"></icon>
+  </view>
+  <button class="forward">转发此文章</button>
+  <text class="content">dsfsdfd胜多负少的立方空间是滴哦分开了放假快乐是打飞机是非得失是水电费经理收定金付了款收到甲方是独立开发建设独立开发</text>
+</view>

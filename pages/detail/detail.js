@@ -1,13 +1,11 @@
-// pages/list/list.js
-import { list_data } from '../../datas/list_data'
+// pages/detail/detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: ["01.jpg","02.jpg","03.jpg","04.jpg","05.jpg"],
-    listData: list_data
+
   },
 
   /**

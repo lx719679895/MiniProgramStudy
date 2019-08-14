@@ -1,1 +1,6 @@
 /* pages/list/list.wxss */
+@import "../../template/list-temp/list-temp.wxss";
+.swiper-image {
+  width: 100%;
+  height: 320rpx;
+}

@@ -1,0 +1,23 @@
+<!--template/list-temp/list-temp.wxml-->
+<template name="list-temp">
+  <view class="container">
+    <view class="header">
+      <image src="{{avatar}}"></image>
+      <text>{{date}}</text>
+    </view>
+    <text class="title">{{author}}</text>
+    <image class="big-img" src="{{detail_img}}"></image>
+    <text class="content">{{detail_content}}</text>
+    <view class="footer">
+      <view class="collection_look">
+        <icon class="iconfont icon-shoucang1"></icon>
+        <text>{{attention_count}}</text>
+      </view>
+      <view class="collection_look">
+        <icon class="iconfont icon-eye"></icon>
+        <text>{{love_count}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+

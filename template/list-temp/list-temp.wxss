@@ -1,0 +1,48 @@
+/* template/list-temp/list-temp.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 10rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.header image {
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.header text {
+  font-size: 28rpx;
+}
+.title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin: 10rpx;
+}
+.big-img {
+  width: 100%;
+  height: 460rpx;
+  margin: 10rpx 0;
+}
+.content {
+  font-size: 32rpx;
+  text-indent: 64rpx;
+}
+.footer {
+  display: flex;
+}
+.footer .collection_look {
+  margin: 10rpx;
+}
+
+.footer .collection_look .iconfont {
+  font-size: 32rpx;
+  display: inline;
+  vertical-align: middle;
+  margin-right: 10rpx;
+  color: #999999;
+}
+
+.footer .collection_look .icon-shoucang1 {
+  color: #ffc043;
+}

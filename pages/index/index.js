@@ -12,6 +12,9 @@ Page({
 
   openHandle() {
     //跳转list页面
+    wx.navigateTo({
+      url: '/pages/list/list'
+    })
   },
 
   /**
