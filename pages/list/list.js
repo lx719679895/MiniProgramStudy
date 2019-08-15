@@ -1,5 +1,6 @@
 // pages/list/list.js
 import { list_data } from '../../datas/list_data'
+
 Page({
 
   /**
@@ -15,6 +16,20 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+
+  handleListTap(e) {
+    let index = e.currentTarget.dataset.index
+    wx.navigateTo({
+      url: '/pages/detail/detail?index=' + index,
+    })
+  },
+
+  carouselToDetail(e) {
+    let index = e.target.dataset.index
+    wx.navigateTo({
+      url: '/pages/detail/detail?index=' + index,
+    })
   },
 
   /**

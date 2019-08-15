@@ -5,7 +5,7 @@
       <image src="{{avatar}}"></image>
       <text>{{date}}</text>
     </view>
-    <text class="title">{{author}}</text>
+    <text class="title">{{title}}</text>
     <image class="big-img" src="{{detail_img}}"></image>
     <text class="content">{{detail_content}}</text>
     <view class="footer">

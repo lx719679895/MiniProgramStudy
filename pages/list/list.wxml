@@ -4,11 +4,11 @@
   <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{4000}}" duration="{{500}}" indicator-color="#f6f6f6">
     <block wx:for="{{imgUrls}}" wx:key="{{index}}">
       <swiper-item>
-        <image class="swiper-image" mode="aspectFill" src="../../images/carousel/{{item}}" />
+        <image class="swiper-image" mode="aspectFill" src="../../images/carousel/{{item}}" data-index="{{index}}" catchtap="carouselToDetail" />
       </swiper-item>
     </block>
   </swiper>
-  <view wx:for="{{listData}}" wx:key="index">
+  <view wx:for="{{listData}}" wx:key="index" data-index="{{index}}" catchtap="handleListTap">
     <template is="list-temp" data="{{...item}}"></template>
   </view>
 </view>
