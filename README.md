@@ -47,3 +47,8 @@
 ### 音乐播放
   1. 如何知道音乐的播放或暂停
   2. 将播放音乐的页面状态保存到appData中
+### tabBar
+  1. app.json文件中配置
+  2. 跳转到tabBar使用wx.switchTab(Object object)
+### 发送ajax请求实现
+  1.  wx.request(Object object)
