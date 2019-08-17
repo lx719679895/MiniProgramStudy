@@ -12,7 +12,7 @@ Page({
 
   openHandle() {
     //跳转list页面
-    wx.navigateTo({
+    wx.switchTab({
       url: '/pages/list/list'
     })
   },

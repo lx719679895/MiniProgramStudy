@@ -10,9 +10,9 @@
   </view>
   <text class="title">{{detailObj.title}}</text>
   <view class="careDetail">
-    <icon class="iconfont icon-shoucang {{isCollected ? 'on' : ''}}" bindtap="handleCollection"></icon>
-    <icon class="iconfont icon-fenxiang"></icon>
+    <icon class="iconfont icon-shoucang {{isCollected ? 'on' : ''}}" catchtap="handleCollection"></icon>
+    <icon class="iconfont icon-fenxiang" catchtap="handleShare"></icon>
   </view>
-  <button class="forward">转发此文章</button>
+  <button class="forward" open-type="share">转发此文章</button>
   <text class="content">{{detailObj.detail_content}}</text>
 </view>

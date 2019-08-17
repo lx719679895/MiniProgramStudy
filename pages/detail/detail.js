@@ -1,6 +1,5 @@
 // pages/detail/detail.js
 let listData = require('../../datas/list_data.js').list_data
-console.log(listData)
 Page({
 
   /**
@@ -66,6 +65,12 @@ Page({
           data: obj
         })
       }
+    })
+  },
+
+  handleShare() {
+    wx.showActionSheet({
+      itemList: ['分享到朋友圈', '分享给好友', '分享到qq', '分享到微博'],
     })
   },
   /**
