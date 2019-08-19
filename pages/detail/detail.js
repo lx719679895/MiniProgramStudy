@@ -1,5 +1,6 @@
 // pages/detail/detail.js
 let listData = require('../../datas/list_data.js').list_data
+let appData = getApp().data
 Page({
 
   /**
@@ -24,13 +25,20 @@ Page({
     })
 
     let storageCollected = wx.getStorageSync('isCollected')
-    console.log(storageCollected)
     if (storageCollected) {
       this.setData({
         isCollected: storageCollected[index] || false
       })
     }
-    this.data.innerAudioContext = wx.createInnerAudioContext()
+
+    this.setData({
+      innerAudioContext: appData.innerAudioContext
+    })
+    if (appData.isPlay && appData.playIndex === index) {
+      this.setData({
+        isPlay: true
+      })
+    }
   },
 
   handleCollection() {
@@ -53,7 +61,6 @@ Page({
       key: 'isCollected',
       success: (res) => {
         obj = {...res.data, ...obj}
-        console.log('obj', obj)
         wx.setStorage({
           key: 'isCollected',
           data: obj
@@ -98,7 +105,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    this.data.innerAudioContext.stop()
+    // this.data.innerAudioContext.stop()
   },
 
   /**
@@ -130,9 +137,12 @@ Page({
     } else {
       innerAudioContext.pause()
     }
-    
+
     this.setData({
       isPlay
     })
+
+    appData.isPlay = isPlay
+    appData.playIndex = this.data.index
   }
 })
